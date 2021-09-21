@@ -56,9 +56,10 @@ class Player {
   }
 
   load(src: string) {
-    // supposed that it is loaded when the first
-    //   segemnt is downloaded
-    fetch(src)
+    // TODO: supposed that it is loaded when the first
+    //  segment  is downloaded
+    // TODO: build for Web browser:
+    //fetch(src)
       .then((res) => res.text())
       // TODO: how to bind but leave first variable unbound?
       //  defineAndSendEvent.bind(this, arg2 = text)

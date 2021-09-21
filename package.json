@@ -1,15 +1,15 @@
 {
   "name": "node-typescript-jest-boilerplate",
   "version": "0.0.1",
-  "description": "NodeJS typescript + jest boilerplate",
+  "description": "player with event bus exercise that uses minimal jest/typescript boilerplate bschlenk/node-typescript-jest-boilerplate"
   "keywords": [
-    "boilerplate",
+    "html5",
     "typescript",
     "jest"
   ],
-  "author": "Brian Schlenker <bschlenk@umich.edu>",
+  "author": "Dan Yaniv"
   "license": "MIT",
-  "repository": "bschlenk/node-typescript-jest-boilerplate",
+  "repository": "bitsmith1010/html5-player-with-event-bus",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -25,7 +25,8 @@
     "test:watch": "npm run jest -- --watch",
     "test": "npm run lint && npm run test:unit",
     "build": "tsc",
-    "prepublishOnly": "npm run test && npm run build"
+    "prepublishOnly": "npm run test && npm run build",
+    "watch": "nodemon"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
@@ -40,6 +41,7 @@
     "husky": "^7.0.0",
     "jest": "^27.0.6",
     "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.9",
     "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
     "ts-node": "^10.0.0",

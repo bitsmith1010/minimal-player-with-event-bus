@@ -1,23 +1,14 @@
-# node-typescript-jest-boilerplate
+# minimal player with event bus  module
 
-Boilerplate for a node server or library written in typescript, using jest as
-the test runner.
+remain to complete:
 
-## Usage
+  - build for web browser
 
-Clone the boilerplate as a new project:
+  - subclasses of events and some verification technique of the
+    event payload
 
-```bash
-git clone https://github.com/bschlenk/node-typescript-jest-boilerplate.git <project>
-```
+  - add event subscriber priorites
 
-Update [package.json](package.json) as you see fit.
+  - player: parse manifest and extract initial segment
 
-## Modifications
-
-If this is for a library only, then chances are you don't need nodemon. You can
-make the following changes to remove it:
-
-- Delete `nodemon.json`
-- Remove `watch` from `package.json` scripts
-- Remove `nodemon` from `package.json` devDependencies
+note: this uses the minimal ts-node/jest boilerplate node-typescript-jest-boilerplate
