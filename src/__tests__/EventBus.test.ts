@@ -1,4 +1,4 @@
-import {Listeners, EventBus} from "../EventBus";
+import {Event, Listeners, EventBus} from "../EventBus";
 
 describe("EventBus", () => {
   const eventBus = new EventBus();
@@ -12,7 +12,8 @@ describe("EventBus", () => {
         .toEqual(expect.arrayContaining(expected));
     });
   });
-  const onLoaded = function() {1};
+  let dispatchedFlag = false;
+  const onLoaded = function() { dispatchedFlag = true };
   eventBus.addListener(PlayerLoadedEventType, onLoaded);
   describe("EventBus#addEventListener", () => {
     const loadedSubscribers =
@@ -21,6 +22,17 @@ describe("EventBus", () => {
     it("should add a new subscriber", () => {
       expect(loadedSubscribers)
         .toEqual(expect.arrayContaining(expected));
+    });
+  });
+  describe("EventBus#dispatchEvent", () => {
+    const event: Event = {
+      "type": PlayerLoadedEventType,
+      "message": '{"key1": "test message"}'
+    };
+    eventBus.dispatchEvent(event);
+    const expected = true;
+    it("should dispatch event to subscriber", () => {
+      expect(dispatchedFlag).toBeTruthy();
     });
   });
   describe("EventBus#removeEventListener", () => {

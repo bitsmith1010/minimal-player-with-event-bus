@@ -1,21 +1,6 @@
-function getMessage(): string {
-  return 'message 1';
-}
-
-function requireDefined<Type>(object: Type): Type
+// this is expected in the build system, TODO: to remove
+function getMessage(): string
 {
-  if (object === undefined) throw Error("OBJECT_INACCESSIBLE");
-  return object;
+  return "test string";
 }
-function requireUndefined<Type>(object: Type): undefined 
-{
-  if (object !== undefined) throw Error("OBJECT_ALREADY_EXISTS");
-  return undefined;
-}
-
-interface Event {
-  readonly type: string;
-  readonly message: string;
-}
-
-export {requireDefined, requireUndefined, getMessage, Event};
+export {getMessage};

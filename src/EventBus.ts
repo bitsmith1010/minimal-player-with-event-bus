@@ -1,4 +1,7 @@
-import {requireDefined, requireUndefined, Event} from "./utils";
+interface Event {
+  readonly type: string;
+  readonly message: string;
+}
 
 type Listener = (event: Event) => void;
 
@@ -54,4 +57,4 @@ class EventBus extends Listeners {
   }
 }
 
-export {Listeners, EventBus};
+export {Event, Listeners, EventBus};
